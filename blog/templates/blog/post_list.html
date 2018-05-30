@@ -3,34 +3,16 @@
 		<title>My Blog</title>
 	</head>
 	<body>
-		<h1>Let's Get Ready to Rumble…</h1>
-		<h2>This is a subhead</h2>
-		<p>Now, let's add a little body text. This is usually a few paragraphs, but can be shorter or longer.</p>
-		<br>
-		<h2>Oh! Did I mention bullet points?</h2>
-		<ul>
-			<li>Numero 1</li>
-			<li>Numero 2</li>
-			<li>Numero 3</li>
-			<li>Numero 4</li>
-			<li>Numero 5</li>
-		</ul>
+		{% for post in posts %}
+			<div>
+				<h1>{{ post.title }}</h1>
+				<h2>Published: {{ post.published_date }}</h2>
+				<h2>By: {{ post.author }}</h2>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor%}	
 
-		<div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+		
 		
 	</body>
 </html>
